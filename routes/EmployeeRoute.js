@@ -1,11 +1,12 @@
 import express from 'express';
-import { getAllEmpDetail, getEmpDetailByID } from '../controller/EmployeeController.js';
+import { deleteEmpDetailByID, getAllEmpDetail, getEmpDetailByID } from '../controller/EmployeeController.js';
 
 const router = express.Router();
 
 
 router.get('/getAllEmpDetails', getAllEmpDetail);
-router.get('/getAllEmpDetails', getEmpDetailByID);
+router.get('/getEmpDetailByID', getEmpDetailByID);
+router.get('/deleteEmpDetailByID', deleteEmpDetailByID);
 
 
 export default router;
