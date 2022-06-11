@@ -9,5 +9,12 @@ const getAllEmpDetail = (req, resp)=>{
     });
 }
 
+const getEmpDetailByID = (req, resp)=>{
+    connection.query(`SELECT * FROM manage_employees where emp_id = ${req.params.id}`,  (err, result) =>{
+        if (err) throw err;
+        resp.send(result);
+    });
+}
 
-export {getAllEmpDetail};
+
+export {getAllEmpDetail,getEmpDetailByID };
