@@ -28,15 +28,15 @@ const getEmpDetailByID = (req, resp)=>{
 const deleteEmpDetailByID = (req, resp)=>{
     connection.query(`DELETE FROM manage_employees where emp_id = ${req.params.id}`,  (err, result) =>{
         if (err) throw err;
-        resp.send({'status':'success', 'message': 'Employee deleted!'});
+        resp.send({'status':'success', 'message': 'Employee Records Deleted!'});
     });
 }
 
 const deleteAllEmpDetail = (req, resp)=>{
-    connection.query(`DELETE FROM manage_employees where emp_id = ${req.params.id}`,  (err, result) =>{
+    connection.query(`TRUNCATE TABLE manage_employees;`,  (err, result) =>{
         if (err) throw err;
-        resp.send({'status':'success', 'message': 'Employee deleted!'});
-    });
+        resp.send({'status':'success', 'message': 'All Employee Records Deleted!'});
+    }); 
 }
 
-export {getAllEmpDetail,getEmpDetailByID, deleteEmpDetailByID,createEmpDetail };
+export {getAllEmpDetail,getEmpDetailByID, deleteEmpDetailByID,createEmpDetail, deleteAllEmpDetail };
