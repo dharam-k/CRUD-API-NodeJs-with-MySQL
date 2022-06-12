@@ -32,4 +32,11 @@ const deleteEmpDetailByID = (req, resp)=>{
     });
 }
 
+const deleteAllEmpDetail = (req, resp)=>{
+    connection.query(`DELETE FROM manage_employees where emp_id = ${req.params.id}`,  (err, result) =>{
+        if (err) throw err;
+        resp.send({'status':'success', 'message': 'Employee deleted!'});
+    });
+}
+
 export {getAllEmpDetail,getEmpDetailByID, deleteEmpDetailByID,createEmpDetail };
