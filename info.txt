@@ -1,0 +1,7 @@
+mysql.escape(id)  Preventing SQL injection
+
+
+https://www.tutsmake.com/create-registration-and-login-form-in-node-js-mysql/
+
+
+const isMatchPass = await bcrypt.compare(password, user.password);
